@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import ast
 import os.path
 from pathlib import Path
 
@@ -24,7 +25,11 @@ SECRET_KEY = 'django-insecure-@e2q^ki7xc38$#*biatsgb&x4vd%i#!0%l$pp!fna7ps7!zn$1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+if ALLOWED_HOSTS is None:
+    ALLOWED_HOSTS = ['0.0.0.0']
+else:
+    ALLOWED_HOSTS = ast.literal_eval(ALLOWED_HOSTS)
 
 # Application definition
 
@@ -119,4 +124,3 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
