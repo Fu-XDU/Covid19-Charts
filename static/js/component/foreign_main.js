@@ -221,7 +221,8 @@ $.ajax({
 	url: url,
 	method: "get",
 	success: function(data) {
-		// console.log(data.retdata);
+		data = JSON.parse(data)
+		//console.log(data)
 
 		WorldMapCur(data); //现存确诊
 		WorldMapAll(data); // 累计确诊
@@ -426,7 +427,7 @@ function WorldMapAll(data) {
 
 // 世界地图：现存确诊
 function WorldMapCur(data) {
-	// console.log(data.retdata);
+	//console.log(data);
 	var length = data.retdata.chinaTotal.xResult[0].data.length
 	var china = {
 		name: "中国",

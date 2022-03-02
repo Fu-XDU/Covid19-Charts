@@ -13,6 +13,9 @@ import sqlite3
 
 def all_data(request):
     d = getNewestData()
+    if d is None:
+        res = fetchData()
+        return HttpResponse(res)
     oldData = json.loads(d)
     data = []
     conn = sqlite3.connect('db.sqlite3')
