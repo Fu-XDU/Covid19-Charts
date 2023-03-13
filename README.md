@@ -2,9 +2,9 @@
 
 ## 简介
 
-仿[百度新型冠状病毒肺炎疫情实时大数据报告](https://voice.baidu.com/act/newpneumonia/newpneumonia/)
+仿~[百度新型冠状病毒肺炎疫情实时大数据报告](https://voice.baidu.com/act/newpneumonia/newpneumonia/)~此网站已关停
 
-应用Demo：~[Demo](http://101.42.106.83:8000/index/)~
+应用Demo：~[Demo](http://101.42.106.83:8000/index/)~Demo已停止展示
 
 ## 实现框架
 
