@@ -1,0 +1,20 @@
+version: '3'
+services:
+  server:
+    image: fuming/covid-data:latest
+    container_name: covid19Data
+    ports:
+      - "8000:8000"
+    # Get environment from https://www.wapi.cn/api_detail/94/222.html
+    environment:
+      api_url: https://grnx.api.storeapi.net/api/94/222
+      appid: 14503
+      secret: a971dc3c1c605bdf6091e314da6df678
+      ALLOWED_HOSTS: "['example.cn','1.1.1.1']"  
+    networks:
+      - covid19Data-net
+
+networks:
+  covid19Data-net:
+    name: covid19Data-net
+    driver: bridge
